@@ -8,29 +8,23 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-      <div class="carousel">
-        <button class="carousel-btn prev">&#8678</button>
-        <button class="carousel-btn next">&#8680</button>
-        <ul>
-          <li class="slide" >
-            <img
+    <div class="carousel" data-carousel>
+      <button class="carousel-btn prev" data-carousel-button="prev">&#8678</button>
+      <button class="carousel-btn next" data-carousel-button="next">&#8680</button>
+        <div class="imageContainer" data-slides>
+            <img class="slide" 
               src="https://images.unsplash.com/photo-1682687220801-eef408f95d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
               alt="Palms #1"
             />
-          </li>
-          <li class="slide" >
-            <img
+            <img class="slide"
               src="https://images.unsplash.com/photo-1682687219612-b12805df750d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
               alt="Palms #2"
             />
-          </li>
-          <li class="slide" data-active>
-            <img
+            <img class="slide"data-active
               src="https://images.unsplash.com/photo-1543306983-a562d8739781?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80"
               alt="Palms #3"
             />
-          </li>
-        </ul>
-      </div>
+        </div>
+      </div> 
   </body>
 </html>

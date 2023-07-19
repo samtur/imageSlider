@@ -87,6 +87,11 @@ video {
     vertical-align: baseline;
 }
 
+:root {
+    --primary: #f5f5f7;
+    --secondary: #1e292e;
+}
+
 *,
 *::before,
 *::after {
@@ -100,12 +105,13 @@ ul {
 }
 
 body {
+    background-color: var(--secondary);
     width: 100vw;
     height: 100vh;
     margin: 0;
     display: grid;
-    grid-template-rows: auto 75% auto;
-    grid-template-columns: auto 75% auto;
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
 }
 
 /* carousel */
@@ -116,31 +122,40 @@ body {
     grid-row: 2/3;
     grid-column: 2/3;
     display: grid;
-    grid-template-columns: 2.5fr 5fr 2.5fr;
+    grid-template-columns: 2fr 5fr 2fr;
+    grid-template-rows: 1fr;
 }
 
 /* slides */
-.slide {
-    height: 100%;
-    width: fit-content;
-    position: absolute;
-    opacity: 0;
+.imageContainer {
+    justify-self: center;
+    align-self: center;
+    width: 500px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    list-style: none;
+    grid-column: 2/3;
+    grid-row: 1/2;
     overflow: hidden;
+}
+
+.slide {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+
 }
 
 .slide[data-active] {
     opacity: 1;
 }
 
-ul {
-    width: 100%;
-    list-style: none;
-    grid-column: 2/3;
-    margin: 0;
-    padding: 0;
-}
 
-.slide>img {
+img {
     max-height: 100%;
     object-fit: cover;
     object-position: center;
@@ -148,11 +163,34 @@ ul {
 
 /* buttons */
 .carousel-btn {
-    grid-column: 2/3;
     z-index: 2;
     position: absolute;
     background: none;
+    border: none;
     font-size: 4rem;
-    top: 50%;
-    transform: translateY(-50%);
+    align-self: center;
+    color: rgba(245, 245, 247, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(30, 41, 46, .1);
+    grid-column: 2/3;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus {
+    color: var(--primary);
+    background-color: rgba(30, 41, 46, .2);
+}
+
+.carousel-btn:focus {
+    outline: 1px solid rgba(30, 41, 46, 1);
+}
+
+.carousel-btn.prev {
+    justify-self: left;
+}
+
+.carousel-btn.next {
+    justify-self: right;
 }
