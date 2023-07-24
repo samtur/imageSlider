@@ -1,5 +1,6 @@
 const carouselFunction = () => {
   const buttons = document.querySelectorAll("[data-carousel-button]");
+  // Function for passing data-active data tag around
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const offset = button.dataset.carouselButton === "next" ? 1 : -1;
@@ -24,6 +25,12 @@ const carouselFunction = () => {
       delete activeSlide.dataset.active;
     });
   });
+
+  // Function for timed interval image change
+  const nextBtn = document.querySelector(".next");
+  setInterval(function () {
+    nextBtn.click();
+  }, 5000);
 };
 
 export { carouselFunction };

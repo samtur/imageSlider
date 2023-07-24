@@ -232,13 +232,15 @@ img {
 }
 
 .circle {
-    cursor: pointer;
     height: 20px;
     width: 20px;
     border-radius: 50%;
     border: 1px solid var(--primary);
+    transition: 50ms ease-in-out;
+    transition-delay: 50ms;
 }
 
 .circle[data-active] {
     background-color: var(--primary);
+    transition-delay: 0ms;
 }
